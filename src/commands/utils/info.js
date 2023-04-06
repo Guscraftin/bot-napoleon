@@ -25,8 +25,8 @@ module.exports = {
             .setTitle('Information sur le bot :')
             .setAuthor({ name: botUser.username, iconURL: botUser.displayAvatarURL() })
             .setThumbnail(interaction.client.user.displayAvatarURL())
-            .setURL('https://apprendre-discord.fr')
-            .setDescription("J'ai été créé dans le but d'aider un maximum de personne sur discord.")
+            .setURL('https://ifive-roleplay.fr')
+            .setDescription("Bras droit de l'empereur, je suis en charge de vous assister durant votre aventure à nos côtés.")
             .addFields(
                 { name: 'Date de création', value: `<t:${parseInt(botUser.createdTimestamp / 1000)}:R>`, inline: true },
                 { name: 'En ligne depuis', value: `<t:${parseInt(interaction.client.readyTimestamp / 1000)}:f>`, inline: true },

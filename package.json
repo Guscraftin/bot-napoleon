@@ -1,23 +1,23 @@
 {
-  "name": "bot-base_general",
+  "name": "bot-napoleon",
   "version": "1.0.0",
-  "description": "Voici la structure pour créer un bot général.",
+  "description": "Le bot discord du serveur Garry's mod Napoléon RP - iFive",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Guscraftin/Bot-base_General.git"
+    "url": "git+https://github.com/Guscraftin/bot-napoleon.git"
   },
   "author": "Guscraftin",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Guscraftin/Bot-base_General/issues"
+    "url": "https://github.com/Guscraftin/bot-napoleon/issues"
   },
-  "homepage": "https://github.com/Guscraftin/Bot-base_General#readme",
+  "homepage": "https://github.com/Guscraftin/bot-napoleon#readme",
   "dependencies": {
-    "discord.js": "14.7.1",
+    "discord.js": "^14.9.0",
     "dotenv": "16.0.3",
     "glob": "8.0.3"
   }

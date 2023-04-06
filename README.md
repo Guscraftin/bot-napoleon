@@ -1,4 +1,4 @@
-# Bot-base_General
+# Bot-napoléon
 
 Voici la structure pour créer un bot général.
 
