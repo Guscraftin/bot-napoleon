@@ -1,6 +1,6 @@
 {
   "name": "bot-napoleon",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Le bot discord du serveur Garry's mod Napoléon RP - iFive",
   "main": "index.js",
   "scripts": {
