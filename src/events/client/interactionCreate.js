@@ -27,7 +27,9 @@ module.exports = {
                 await button.execute(interaction);
             } catch (error) {
                 console.error(`Erreur d'exécution du boutton : ${interaction.customId}`);
-                console.error(error);
+                if (!error.includes('Unknown interaction')) {
+					console.error(error);
+				}
             }
 		} else if (interaction.isStringSelectMenu()) {
 			const { selectMenus } = interaction.client;
@@ -39,7 +41,9 @@ module.exports = {
 				await selectMenu.execute(interaction);
 			} catch (error) {
 				console.error(`Erreur d'exécution du menu déroulant : ${interaction.customId}`);
-				console.error(error);
+				if (!error.includes('Unknown interaction')) {
+					console.error(error);
+				}
 			}
 		} else if (interaction.isModalSubmit()) {
 			const { modals } = interaction.client;
