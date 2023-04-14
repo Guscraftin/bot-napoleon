@@ -38,37 +38,37 @@ module.exports = {
 				const embed = new EmbedBuilder()
 					.setTitle('Règlement')
 					.setDescription(`
-                        1 · En rejoignant notre Discord, nous considérons que vous connaissez les [Conditions d'Utilisation](https://discord.com/terms) de Discord et vous devenez les appliqués.
+1 · En rejoignant notre Discord, nous considérons que vous connaissez les [Conditions d'Utilisation](https://discord.com/terms) de Discord et vous devenez les appliqués.
 
-                        2 · L'ensemble des règles n'a pas de sanction prédéfinie, tout staff est libre d'appliquer la sanction qui lui semble juste, par conséquent toute action de non respect du règlement justifie toute sanction, quel quel soit.
+2 · L'ensemble des règles n'a pas de sanction prédéfinie, tout staff est libre d'appliquer la sanction qui lui semble juste, par conséquent toute action de non respect du règlement justifie toute sanction, quel quel soit.
 
-                        3 · Toute sanction peut être accompagner d'un signalement à l'équipe de Discord.
+3 · Toute sanction peut être accompagner d'un signalement à l'équipe de Discord.
 
-                        4 · Le spam / le flood / le hors sujet / la pollution / la mention abusive (plus de trois mentions) dans un quelconque Channel est punissable. 
+4 · Le spam / le flood / le hors sujet / la pollution / la mention abusive (plus de trois mentions) dans un quelconque Channel est punissable. 
 
-                        5 · Toute insulte / toute injure / toute utilisation de mots injurieux est punissable (l'humour est bien sûr toléré).
+5 · Toute insulte / toute injure / toute utilisation de mots injurieux est punissable (l'humour est bien sûr toléré).
 
-                        6 · Toute insulte / toute injure / toute utilisation de mots à injurieux sur le thème raciale / politique / sexuelle / ou toute autre discrimination est punissable. 
+6 · Toute insulte / toute injure / toute utilisation de mots à injurieux sur le thème raciale / politique / sexuelle / ou toute autre discrimination est punissable. 
 
-                        7 · Toute PUB en message privée ou sur le discord, sans le consentement du ou des membres concernés est punissable.
+7 · Toute PUB en message privée ou sur le discord, sans le consentement du ou des membres concernés est punissable.
 
-                        8 · Toute PUB avec ce Discord ne respectant pas les règle d'un serveur (Pub MP / Spam Pub / Pub abusive) est punissable.
+8 · Toute PUB avec ce Discord ne respectant pas les règle d'un serveur (Pub MP / Spam Pub / Pub abusive) est punissable.
 
-                        9 · Toute utilisation d'un double-compte sans autorisation de la Direction est punissable.
+9 · Toute utilisation d'un double-compte sans autorisation de la Direction est punissable.
 
-                        10 · Toute divulgation de Dossier / Contenue / Conversation / Information / et autre, venant de la partie interne (staff et direction) est punissable.
+10 · Toute divulgation de Dossier / Contenue / Conversation / Information / et autre, venant de la partie interne (staff et direction) est punissable.
 
-                        11 · Ce règlement est applicable tant bien sur l'ensemble des Discord de la communauté, mais aussi sur toute autre plateforme de discussion concernant la communauté, ainsi que tout message privée avec un membre de notre discord ou toute autre plateforme.
+11 · Ce règlement est applicable tant bien sur l'ensemble des Discord de la communauté, mais aussi sur toute autre plateforme de discussion concernant la communauté, ainsi que tout message privée avec un membre de notre discord ou toute autre plateforme.
 
-                        12 · Tout pseudo modifié sur le Discord ou les autres plateformes, doit rester respectueux, les pseudos humoristiques et provisoires sont, bien sûr, tolérés.
+12 · Tout pseudo modifié sur le Discord ou les autres plateformes, doit rester respectueux, les pseudos humoristiques et provisoires sont, bien sûr, tolérés.
 
-                        13 · Toute arnaque / tout vol / tout leak est punissable.
+13 · Toute arnaque / tout vol / tout leak est punissable.
 
-                        14 · Toute soudboard / tout spam / toute utilisation ou production d'un sons de plus de 80 décibels (seuil de dangerosité sonore) en vocal est punissable.
+14 · Toute soudboard / tout spam / toute utilisation ou production d'un sons de plus de 80 décibels (seuil de dangerosité sonore) en vocal est punissable.
 
-                        15 · Tout post de contenu vulgaire, à caractère sexuel, haineux, raciste ou violent est punissable.
-                    
-                        **Dès votre arriver sur le Discord, nous considérons que vous avez connaissances des Condition d'Utilisation de Discord ainsi que de notre règlement spécifique. Vous pouvez-donc être sanctionner en toute connaissance de cause.**
+15 · Tout post de contenu vulgaire, à caractère sexuel, haineux, raciste ou violent est punissable.
+
+**Dès votre arriver sur le Discord, nous considérons que vous avez connaissances des Condition d'Utilisation de Discord ainsi que de notre règlement spécifique. Vous pouvez-donc être sanctionner en toute connaissance de cause.**
                     `)
 					.setColor('00ad7a')
                     .setFooter({ text: `Dernière modification: ${formattedDate} à ${hours}h${minutes}` });
