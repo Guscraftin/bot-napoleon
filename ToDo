@@ -1,0 +1,17 @@
+
+# ToDo:
+
+[x] Put in one line the error where: Unknown interaction 
+
+[ ] Add all logs
+[ ] Add automatically roles when enter ou leave the staff
+
+
+# Actual features
+
+## Commands
+- docs: send information message (admin only)
+- info: information about the bot
+
+## Features
+- 
