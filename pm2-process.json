@@ -1,8 +1,8 @@
 {
     "name": "Bot_Napoleon",
-    "script": "npm i && node .",
+    "script": "node .",
     "watch": true,
     "out_file": "../log-napoleon",
-    "log_date_format": "YYYY-MM-DD HH:mm:ss Z",
+    "log_date_format": "YYYY-MM-DD HH:mm:ss",
     "ignore_watch": ["database.sqlite"]
 }
