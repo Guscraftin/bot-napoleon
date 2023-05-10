@@ -11,6 +11,7 @@
 
 ## Commands
 - docs: send information message (admin only)
+- dbconfig: update the database (admin only) 
 - info: information about the bot
 
 ## Features

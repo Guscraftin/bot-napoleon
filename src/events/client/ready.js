@@ -1,4 +1,5 @@
 const { Events } = require('discord.js');
+const { Logs } = require('../../dbObjects');
 
 module.exports = {
 	name: Events.ClientReady,
@@ -8,6 +9,9 @@ module.exports = {
         let usersCount = client.guilds.cache.reduce((a, g) => a + g.memberCount, 0);
 
 		client.user.setPresence({ status: 'online' });
+
+        // Sync db models with db
+        await Logs.sync({ alter: true });
 
         console.log(`${client.user.username} est prêt à être utilisé par ${usersCount} utilisateurs sur ${guildsCount.size} serveurs !`);
 	},
