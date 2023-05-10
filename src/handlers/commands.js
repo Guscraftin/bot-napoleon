@@ -5,11 +5,16 @@ const { REST, Routes } = require('discord.js');
 
 module.exports = async (client) => {
     const commands = [];
+    let infoCommand = [];
 
-    (await pGlob(`${process.cwd()}/src/commands/*/*.js`, { windowsPathsNoEscape: 
-        process.env.ON_WINDOWS })).map(async (cmdFile) => {
+    (await pGlob(`${process.cwd()}/src/commands/*/*.js`, { windowsPathsNoEscape: process.env.ON_WINDOWS })).map(async (cmdFile) => {
         const cmd = require(cmdFile);
-        commands.push(cmd.data.toJSON());
+        
+        if (cmd.data.name === 'infos') {
+            infoCommand = [cmd.data.toJSON()];
+        } else {
+            commands.push(cmd.data.toJSON());
+        }
 
         if ('data' in cmd && 'execute' in cmd) {
             client.commands.set(cmd.data.name, cmd);
@@ -18,17 +23,33 @@ module.exports = async (client) => {
         }
     });
 
+    const commandCount = infoCommand.length === 0 ? commands.length : commands.length+1;
     const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
     (async () => {
         try {
-            console.log(`Lancement du déploiement des ${commands.length} slash commandes (/).`);
+            console.log(`Lancement du déploiement des ${commandCount} slash commandes (/).`);
     
-            const data = await rest.put(
-                Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID),
-                { body: commands },
-            );
+            const deploy = [
+                rest.put(
+                    Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID_MAIN),
+                    { body: commands },
+                ),
+                rest.put(
+                    Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID_FR),
+                    { body: commands },
+                ),
+                rest.put(
+                    Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID_EN),
+                    { body: commands },
+                ),
+                rest.put(
+                    Routes.applicationCommands(process.env.CLIENT_ID),
+                    { body: infoCommand },
+                )
+            ];
     
-            console.log(`Déploiement des ${data.length} slash commandes (/) réussit.`);
+            await Promise.all(deploy);
+            console.log(`Déploiement des ${commandCount} slash commandes (/) réussit.`);
         } catch (error) {
             console.error(error);
         }

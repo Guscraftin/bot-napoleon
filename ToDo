@@ -2,9 +2,11 @@
 # ToDo:
 
 [x] Put in one line the error where: Unknown interaction 
+[ ] Fix Unknown interaction when person interact for the first time (with an old button ?)
 
 [ ] Add all logs
 [ ] Add automatically roles when enter ou leave the staff
+[ ] Deploy commands only on 3 servers except for /infos (create the command and invite people who are not already on the main server)
 
 
 # Actual features
