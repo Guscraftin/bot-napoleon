@@ -4,5 +4,5 @@
     "watch": true,
     "out_file": "../log-napoleon",
     "log_date_format": "YYYY-MM-DD HH:mm:ss",
-    "ignore_watch": ["database.sqlite"]
+    "ignore_watch": ["database"]
 }
