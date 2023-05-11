@@ -10,7 +10,7 @@ const { Logs } = require('./dbObjects');
 async function getLogChannel(guild, logsType) {
     try {
         const logs = await Logs.findOne({ where: { guild_id: guild.id } });
-        if (!logs || !logs[logsType] || logs[logsType] === 0) return;
+        if (!logs || !logs[logsType] || logs[logsType] == '0') return;
 
         const logChannel = await guild.channels.fetch(logs[logsType]);
         if (logChannel instanceof Collection) return;
