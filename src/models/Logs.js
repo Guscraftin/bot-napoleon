@@ -4,7 +4,12 @@ module.exports = (sequelize, DataTypes) => {
 			type: DataTypes.STRING,
 			primaryKey: true,
 		},
-		logs_members: {
+		logs_moderation: {
+			type: DataTypes.STRING,
+			defaultValue: 0,
+			allowNull: false,
+		},
+        logs_members: {
 			type: DataTypes.STRING,
 			defaultValue: 0,
 			allowNull: false,
