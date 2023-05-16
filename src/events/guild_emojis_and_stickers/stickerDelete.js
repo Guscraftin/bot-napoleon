@@ -4,7 +4,7 @@ const { getLogChannel } = require('../../functions');
 module.exports = {
     name: Events.GuildStickerDelete,
     async execute(sticker){
-        const logChannel = await getLogChannel(ban.guild, 'logs_generals');
+        const logChannel = await getLogChannel(sticker.guild, 'logs_generals');
         if (!logChannel) return;
 
         const embed = new EmbedBuilder()

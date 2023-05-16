@@ -4,7 +4,7 @@ const { getLogChannel } = require('../../functions');
 module.exports = {
     name: Events.MessageUpdate,
     async execute(oldMessage, newMessage){
-        const logChannel = await getLogChannel(message.guild, 'logs_messages');
+        const logChannel = await getLogChannel(newMessage.guild, 'logs_messages');
         if (!logChannel) return;
 
         const oldContentMessage = oldMessage.content;

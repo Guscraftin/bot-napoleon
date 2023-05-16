@@ -4,7 +4,7 @@ const { getLogChannel } = require('../../functions');
 module.exports = {
     name: Events.WebhooksUpdate,
     async execute(channel){
-        const logChannel = await getLogChannel(ban.guild, 'logs_moderation');
+        const logChannel = await getLogChannel(channel.guild, 'logs_moderation');
         if (!logChannel) return;
 
         let numberWebhooks;

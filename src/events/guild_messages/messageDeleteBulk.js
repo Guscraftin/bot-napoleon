@@ -4,7 +4,7 @@ const { getLogChannel } = require('../../functions');
 module.exports = {
     name: Events.MessageDeleteBulk,
     async execute(messages, channel){
-        const logChannel = await getLogChannel(message.guild, 'logs_messages');
+        const logChannel = await getLogChannel(channel.guild, 'logs_messages');
         if (!logChannel) return;
 
         const embed = new EmbedBuilder()

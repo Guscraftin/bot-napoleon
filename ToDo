@@ -4,9 +4,9 @@
 [x] Put in one line the error where: Unknown interaction 
 [ ] Fix Unknown interaction when person interact for the first time (with an old button ?)
 
-[ ] Add all logs
+[ ] Add all logs [EN COURS]
 [ ] Add automatically roles when enter ou leave the staff
-[ ] Deploy commands only on 3 servers except for /infos (create the command and invite people who are not already on the main server)
+[ ] Deploy commands only on 3 servers except for /infos (create the command and invite people who are not already on the main server ? really util ? it is consider as spam people MP who can report the bot ? Warning 100 servers, lose permissions; two bots ?)
 
 
 # Actual features
@@ -18,4 +18,4 @@
 - info: information about the bot
 
 ## Features
-- 
+- Logs in several channels according of the type (use database)
