@@ -12,7 +12,7 @@ module.exports = {
             .setColor('#009ECA')
             .setDescription(`**Invitation crée par ${invite.inviter} dans ${invite.channel}.**
             > **Code :** \`${invite.code}\`
-            > **Expire le :** <t:${parseInt(invite.expiresTimestamp / 1000)}:f> <t:${parseInt(invite.expiresTimestamp / 1000)}:R>
+            > **Expire le :** ${ invite.expiresTimestamp ? `<t:${parseInt(invite.expiresTimestamp / 1000)}:f> <t:${parseInt(invite.expiresTimestamp / 1000)}:R>` : `\`Jamais\``}
             > **Nombre d'utilisateur maximum :** ${invite.maxUses === 0 ? `\`Illimité\`` : `\`${invite.maxUses}\``}
             `)
             .setTimestamp()

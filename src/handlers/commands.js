@@ -30,21 +30,25 @@ module.exports = async (client) => {
             console.log(`Lancement du déploiement des ${commandCount} slash commandes (/).`);
     
             const deploy = [
+                // rest.put(
+                //     Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID_MAIN),
+                //     { body: commands },
+                // ),
+                // rest.put(
+                //     Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID_FR),
+                //     { body: commands },
+                // ),
+                // rest.put(
+                //     Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID_EN),
+                //     { body: commands },
+                // ),
+                // rest.put(
+                //     Routes.applicationCommands(process.env.CLIENT_ID),
+                //     { body: infoCommand },
+                // )
                 rest.put(
-                    Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID_MAIN),
+                    Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID),
                     { body: commands },
-                ),
-                rest.put(
-                    Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID_FR),
-                    { body: commands },
-                ),
-                rest.put(
-                    Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID_EN),
-                    { body: commands },
-                ),
-                rest.put(
-                    Routes.applicationCommands(process.env.CLIENT_ID),
-                    { body: infoCommand },
                 )
             ];
     
