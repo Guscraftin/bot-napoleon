@@ -4,7 +4,7 @@ const { getLogChannel } = require('../../functions');
 module.exports = {
     name: Events.ThreadUpdate,
     async execute(oldThread, newThread){
-        const logChannel = await getLogChannel(newThread.guild, 'logs_threads');
+        const logChannel = await getLogChannel(newThread.guild, 'logs_channels');
         if (!logChannel) return;
 
         const embedModif = new EmbedBuilder()

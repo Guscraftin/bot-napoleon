@@ -4,7 +4,7 @@ const { getLogChannel } = require('../../functions');
 module.exports = {
     name: Events.ThreadDelete,
     async execute(thread){
-        const logChannel = await getLogChannel(thread.guild, 'logs_generals');
+        const logChannel = await getLogChannel(thread.guild, 'logs_channels');
         if (!logChannel) return;
 
         const embed = new EmbedBuilder()

@@ -4,7 +4,7 @@ const { getLogChannel } = require('../../functions');
 module.exports = {
     name: Events.ThreadCreate,
     async execute(thread){
-        const logChannel = await getLogChannel(thread.guild, 'logs_generals');
+        const logChannel = await getLogChannel(thread.guild, 'logs_channels');
         if (!logChannel) return;
         const ownerThread = await thread.members.fetch(thread.ownerId);
         

@@ -4,7 +4,7 @@ const { getLogChannel } = require('../../functions');
 module.exports = {
     name: Events.ChannelUpdate,
     async execute(oldChannel, newChannel){
-        const logChannel = await getLogChannel(newChannel.guild, 'logs_generals');
+        const logChannel = await getLogChannel(newChannel.guild, 'logs_channels');
         if (!logChannel) return;
         const oldPermissions = oldChannel.permissions;
         const newPermissions = newChannel.permissions;
