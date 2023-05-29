@@ -29,24 +29,34 @@ module.exports = async (client) => {
         try {
             console.log(`Lancement du déploiement des ${commandCount} slash commandes (/).`);
     
-            const deploy = [
-                rest.put(
-                    Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID_MAIN),
-                    { body: commands },
-                ),
-                rest.put(
-                    Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID_FR),
-                    { body: commands },
-                ),
-                rest.put(
-                    Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID_EN),
-                    { body: commands },
-                ),
-                rest.put(
-                    Routes.applicationCommands(process.env.CLIENT_ID),
-                    { body: infoCommand },
-                )
-            ];
+            let deploy = [];
+            if (process.env.IN_PRODUCTION === 'true') {
+                deploy = [
+                    rest.put(
+                        Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID_MAIN),
+                        { body: commands },
+                    ),
+                    rest.put(
+                        Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID_FR),
+                        { body: commands },
+                    ),
+                    rest.put(
+                        Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID_EN),
+                        { body: commands },
+                    ),
+                    rest.put(
+                        Routes.applicationCommands(process.env.CLIENT_ID),
+                        { body: infoCommand },
+                    )
+                ];
+            } else {
+                deploy = [
+                    rest.put(
+                        Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID),
+                        { body: commands },
+                    ),
+                ];
+            }
     
             await Promise.all(deploy);
             console.log(`Déploiement des ${commandCount} slash commandes (/) réussit.`);
