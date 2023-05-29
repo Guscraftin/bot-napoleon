@@ -12,12 +12,13 @@
 # Actual features
 
 ## Commands
-- docs: send information message (admin only)
-- dbinit: create the line for a guild
+- dbinitlogs: create the line for a guild in logs db (admin only)
 - dbconfig: update the database (admin only) 
+- dbvocals: different commands to control vocals db (admin only)
+- docs: send information message (admin only)
 - info: information about the bot
-- syncroles: force syncro roles between discord servers
+- syncroles: force syncro roles between discord servers (admin only)
 
 ## Features
 - Logs in several channels according of the type (use database)
-- Syncro roles between discord servers all day at 5am
+- Syncro roles between discord servers all day at 5am (verify) and when a user change role in nation server
