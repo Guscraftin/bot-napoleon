@@ -1,5 +1,5 @@
 const { Events } = require('discord.js');
-const { Logs } = require('../../dbObjects');
+const { Logs, Vocals } = require('../../dbObjects');
 const cron = require('cron');
 const { syncRoles } = require('../../commands/admin/syncroles');
 
@@ -15,6 +15,7 @@ module.exports = {
 
         // Sync db models with db
         await Logs.sync({ alter: true });
+        await Vocals.sync({ alter: true });
 
         // Start cron jobs
         await repeatFunction(client);

@@ -1,5 +1,5 @@
 const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
-const { Logs, sequelize } = require('../../dbObjects');
+const { Logs } = require('../../dbObjects');
 
 module.exports = {
 	data: new SlashCommandBuilder()
