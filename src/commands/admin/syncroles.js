@@ -1,18 +1,20 @@
-const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
+const { Collection, SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName("syncroles")
-		.setDescription("Permet de forcer la syncronisation des rôles entre les serveurs.")
+		.setDescription("Permet de vérifier la syncronisation des rôles entre les serveurs discord.")
         .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
 		.setDMPermission(false),
 	async execute(interaction) {
         await interaction.deferReply({ ephemeral: true });
     
         // Sync roles
-        await syncRoles(interaction.client);
-
-        await interaction.editReply({ content: "Les rôles ont été synchronisés.", ephemeral: true });
+        if (!await syncRoles(interaction.client)) {
+            return await interaction.editReply({ content: "Une erreur est survenue lors de la synchronisation des rôles.", ephemeral: true });
+        } else {
+            await interaction.editReply({ content: "Les rôles ont été synchronisés.", ephemeral: true });
+        }
 	}, syncRoles
 };
 
@@ -23,6 +25,8 @@ async function syncRoles(client) {
     const guild_main = await client.guilds.fetch(process.env.GUILD_ID_MAIN);
     const guild_fr = await client.guilds.fetch(process.env.GUILD_ID_FR);
     const guild_en = await client.guilds.fetch(process.env.GUILD_ID_EN);
+
+    if (guild_main instanceof Collection || guild_fr instanceof Collection || guild_en instanceof Collection) return;
 
     // Get roles in nations guilds
     const roles_fr = await guild_fr.roles.fetch(role_fr_french);
@@ -64,4 +68,6 @@ async function syncRoles(client) {
             await member.roles.remove(role_main_english);
         }
     });
+
+    return true;
 }
