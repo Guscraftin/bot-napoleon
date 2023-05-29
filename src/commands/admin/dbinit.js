@@ -1,8 +1,6 @@
 const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
 const { Logs, sequelize } = require('../../dbObjects');
 
-// Delete this command when all server have been initialized because it do in guildCreate event
-
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName("dbinit")

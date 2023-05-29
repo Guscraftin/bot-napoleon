@@ -16,6 +16,8 @@
 - dbinit: create the line for a guild
 - dbconfig: update the database (admin only) 
 - info: information about the bot
+- syncroles: force syncro roles between discord servers
 
 ## Features
 - Logs in several channels according of the type (use database)
+- Syncro roles between discord servers all day at 5am
