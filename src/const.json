@@ -2,5 +2,19 @@
     "role_fr_french": "806927968144326674",
     "role_en_english": "808003530027040808",
     "role_main_french": "1092120201627177011",
-    "role_main_english": "1092120203233591327"
+    "role_main_english": "1092120203233591327",
+
+    "role_fr_leaders": "808036364372279356",
+    "role_en_leaders": "808347111334608897",
+    "role_main_fr_leaders": "1092120196531093684",
+    "role_main_en_leaders": "1092120198254960711",
+
+    "role_fr_staff": "806927967694880825",
+    "role_en_staff": "808003545609142323",
+    "role_main_staff": "1092120192231944232",
+    "role_main_founders": "1092120168655761499",
+
+    "role_fr_topstaff": "806927968265961483",
+    "role_en_topstaff": "808003501837910026",
+    "role_main_topstaff": "1092120175467298856"
 }
