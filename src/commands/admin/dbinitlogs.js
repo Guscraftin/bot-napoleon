@@ -4,7 +4,7 @@ const { Logs, sequelize } = require('../../dbObjects');
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName("dbinitlogs")
-		.setDescription("Permet d'initialiser la db logs pour ce serveur.")
+		.setDescription("🔧 Permet d'initialiser la db logs pour ce serveur.")
         .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
 		.setDMPermission(false),
 	async execute(interaction) {

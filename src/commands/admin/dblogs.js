@@ -4,7 +4,7 @@ const { Logs } = require('../../dbObjects');
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName("dblogs")
-		.setDescription("Permet de configurer la db des logs.")
+		.setDescription("🔧 Permet de configurer la db des logs.")
         .addChannelOption(option => 
             option.setName('logs_moderation')
             .setDescription('Le channel où seront envoyés les logs concernant les actions de modération.'))

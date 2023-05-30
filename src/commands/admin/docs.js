@@ -3,7 +3,7 @@ const { SlashCommandBuilder, PermissionFlagsBits, EmbedBuilder } = require('disc
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName("docs")
-		.setDescription("Permet d'afficher des messages informatifs.")
+		.setDescription("🔧 Permet d'afficher des messages informatifs.")
 		.addStringOption(option =>
 			option.setName('type')
 				.setDescription('The input to echo back')

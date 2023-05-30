@@ -3,7 +3,7 @@ const { Collection, SlashCommandBuilder, PermissionFlagsBits } = require('discor
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName("syncroles")
-		.setDescription("Permet de vérifier la syncronisation des rôles entre les serveurs discord.")
+		.setDescription("🔧 Permet de vérifier la syncronisation des rôles entre les serveurs discord.")
         .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
 		.setDMPermission(false),
 	async execute(interaction) {

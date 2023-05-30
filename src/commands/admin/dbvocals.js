@@ -4,7 +4,7 @@ const { Vocals } = require('../../dbObjects');
 module.exports = {
     data: new SlashCommandBuilder()
         .setName("dbvocals")
-        .setDescription("Permet de configurer la db des vocaux auto.")
+        .setDescription("🔧 Permet de configurer la db des vocaux auto.")
         .addSubcommand(subcommand =>
             subcommand
                 .setName('add')
