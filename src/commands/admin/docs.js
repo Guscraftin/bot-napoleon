@@ -9,15 +9,25 @@ module.exports = {
 				.setDescription('The input to echo back')
 				.addChoices(
 					{ name: 'règlement', value: 'reglement' },
+                    { name: 'histoire', value: 'histoire' },
 				)
 				.setRequired(true))
         .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
 		.setDMPermission(false),
 	async execute(interaction) {
+        await interaction.deferReply({ ephemeral: true });
+
 		const type = interaction.options.getString('type');
         
 		switch (type) {
 			case 'reglement':
+                if (!interaction.channel.name.includes('règlement')) return interaction.editReply({ content: 'Cette commande ne peut être utilisé que dans un salon `règlement` !', ephemeral: true });
+
+                // Check if there is already a reglement message
+                const messages = await interaction.channel.messages.fetchPinned();
+
+                const reglementMessage = messages.find(message => message.author.id === interaction.client.user.id && message.embeds.length > 0 && message.embeds[0].title === 'Règlement');
+
                 // Get the current date
                 const now = new Date();
 
@@ -68,18 +78,42 @@ module.exports = {
 
 15 · Tout post de contenu vulgaire, à caractère sexuel, haineux, raciste ou violent est punissable.
 
+16 · En raison de la nature publique de ce serveur, tout contenu NSFW est strictement interdit.
+
 **Dès votre arriver sur le Discord, nous considérons que vous avez connaissances des Condition d'Utilisation de Discord ainsi que de notre règlement spécifique. Vous pouvez-donc être sanctionner en toute connaissance de cause.**
                     `)
 					.setColor('00ad7a')
                     .setFooter({ text: `Dernière modification: ${formattedDate} à ${hours}h${minutes}` });
 
-                await interaction.channel.send({ embeds: [embed] });
+
+                // Edit the message if it already exists
+                if (reglementMessage) {
+                    await reglementMessage.edit({ embeds: [embed] });
+                } else {
+                    const reglement = await interaction.channel.send({ embeds: [embed] });
+                    await reglement.pin();
+                    await interaction.channel.lastMessage.delete();
+                }
+                break;
+
+            case 'histoire':
+                // Create the message
+                await interaction.channel.send(`
+\`\`\`fix
+L'histoire
+\`\`\`
+> Bonjour cher(e) joueur(se) et bienvenue sur Napoléon RP, un serveur serious RP, prenant place à l'époque de la grande armée.
+> 
+> Vous êtes un soldat en pleine campagne de guerre. Napoléon domine actuellement la grande majorité de l'Europe et a pris soin de placer ses pions à la tête des divers états qu'il domine et ce dernier ne va sûrement pas tarder à ajouter la Russie à sa liste sanglante. Mais quelque chose me fait dire que le vent va probablement bientôt tourner.
+> 
+> Commencez par choisir une Nation, défendez la bannière de l'Empire corps et âmes jusqu'à votre dernier souffle ou repoussez les ambitions meurtrières de la France dans l'armée de Sa Majesté et cela tout en côtoyant d'illustres personnages qui vous accompagneront sur les champs de bataille. Votre devoir en tant que soldat sera de réussir votre formation disciplinaire d'infanterie afin de pouvoir choisir une division parmi celles qui vous sont proposées (infanterie, cavalerie ou artillerie). Avec du temps, de la pratique et de l'expérience, vous monterez en grade et qui sait peut-être qu'un jour votre nom aussi sera signe d'espoir pour les générations futures. Peut-être qu'un jour vous aussi vous entrerez dans la légende.
+                `)
                 break;
 
 			default:
-				return interaction.reply({ content: 'Je ne trouve pas ce que tu cherches.', ephemeral: true });
+				return interaction.editReply({ content: 'Je ne trouve pas ce que tu cherches.', ephemeral: true });
 		}
 
-        return interaction.reply({ content: 'Le message a bien été envoyé dans ce salon.', ephemeral: true });
+        return interaction.editReply({ content: 'Le message a bien été envoyé dans ce salon.', ephemeral: true });
 	},
 };
