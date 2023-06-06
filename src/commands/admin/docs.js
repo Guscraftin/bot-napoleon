@@ -48,7 +48,7 @@ module.exports = {
 				const embed = new EmbedBuilder()
 					.setTitle('Règlement')
 					.setDescription(`
-1 · En rejoignant notre Discord, nous considérons que vous connaissez les [Conditions d'Utilisation](https://discord.com/terms) de Discord et vous devenez les appliqués.
+1 · En rejoignant notre Discord, nous considérons que vous connaissez les [Conditions d'Utilisation](https://discord.com/terms) de Discord et vous devez les appliquer.
 
 2 · L'ensemble des règles n'a pas de sanction prédéfinie, tout staff est libre d'appliquer la sanction qui lui semble juste, par conséquent toute action de non respect du règlement justifie toute sanction, quel quel soit.
 
