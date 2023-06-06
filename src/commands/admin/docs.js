@@ -80,6 +80,8 @@ module.exports = {
 
 16 · En raison de la nature publique de ce serveur, tout contenu NSFW est strictement interdit.
 
+17 · Le roleplay sexuel (RPQ ou ERP) est strictement interdit.
+
 **Dès votre arriver sur le Discord, nous considérons que vous avez connaissances des Condition d'Utilisation de Discord ainsi que de notre règlement spécifique. Vous pouvez-donc être sanctionner en toute connaissance de cause.**
                     `)
 					.setColor('00ad7a')
